@@ -13,7 +13,7 @@ test.group('Duenos', () => {
           "propietario": "alfredo",
           "problema": "no prende",
           "telefono": "8715178874",
-          "email": "alcholico@gmail.com",
+          "email": "acholico@gmail.com",
           "estado": "pendiente",
           "created_at": null,
           "updated_at": null
@@ -23,7 +23,7 @@ test.group('Duenos', () => {
   })
 
   test('dispositivoemail', async ({client}) => {
-    const response = await client.get('/dispositivoemail/josegmail.com')
+    const response = await client.get('/dispositivoemail/jose@gmail.com')
 
     response.assertStatus(200)
     response.assertBody({
@@ -80,7 +80,7 @@ test.group('Duenos', () => {
     const valido = JSON.parse(response.text())
 
     response.assertStatus(200)
-    assert.isEmpty(valido.data)
+    assert.isEmpty(valido.dispositivo	)
     
   })
 

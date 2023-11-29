@@ -87,8 +87,9 @@ export default class DispositivosController {
     }
 
     public async respuestavacia({response} : HttpContextContract){
+      const dispositivo = await Dispositivo.query().where('propietario', 'alvaro').exec();
 
-       response.ok({data: ""})
+       response.ok({dispositivo})
 
     }
     public async existepropietario({ response, params }: HttpContextContract) {
